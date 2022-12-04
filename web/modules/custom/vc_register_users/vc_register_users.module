@@ -1,0 +1,49 @@
+<?php
+
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Drupal\taxonomy\Entity\Term;
+
+/**
+ * Implements hook_page_attachments().
+*/
+function vc_register_users_page_attachments(array &$attachments) {
+    $current_user_id = \Drupal::currentUser()->id();
+    $node = \Drupal::routeMatch()->getParameter('node');
+    $nid = '';
+    if ($node instanceof \Drupal\node\NodeInterface) {
+        $nid = $node->id();
+    }
+    $attachments['#attached']['drupalSettings']['vc_register_users'] = [
+        'current_user_id' => $current_user_id,
+        'node_id' => $nid,
+    ];
+}
+
+/**
+ * Implements hook_user_login().
+*/
+function vc_register_users_user_login(\Drupal\user\UserInterface $account) {
+    // Ignore password reset.
+    $route_name = \Drupal::routeMatch()->getRouteName();
+    if ($route_name !== 'user.reset.login') {
+        // Do not interfere if a destination was already set.
+        $current_request = \Drupal::service('request_stack')->getCurrentRequest();
+
+        // Load the current user.
+        $user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
+
+        // Get state city from logged-in user.
+        $state = $user->field_user_state->target_id;
+        $term = Term::load($state);
+        $state_name = strtolower($term->getName());
+
+        $city = $user->field_user_city->target_id;
+        $term = Term::load($city);
+        $city_name = strtolower($term->getName());
+
+        $current_request->query->set(
+            'destination',
+            '/vaccination-centers-list/'.$state_name.'/'.$city_name,
+        );
+    }
+  }

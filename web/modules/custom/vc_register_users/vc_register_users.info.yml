@@ -1,0 +1,5 @@
+name: 'Register User'
+type: module
+description: 'Custom Functionality to register user for particular center'
+core_version_requirement: ^8.8 || ^9
+package: 'Custom'

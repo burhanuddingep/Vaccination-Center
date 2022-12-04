@@ -1,0 +1,29 @@
+uuid: 5049a5f2-8a59-418b-aa8a-d23960cf2c52
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_state
+    - node.type.vaccination_center_details
+    - taxonomy.vocabulary.state
+id: node.vaccination_center_details.field_state
+field_name: field_state
+entity_type: node
+bundle: vaccination_center_details
+label: State
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      state: state
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

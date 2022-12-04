@@ -1,0 +1,30 @@
+uuid: 540b58c8-d705-4b40-8076-2a19f00c95df
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.vaccination_centers_list
+  module:
+    - system
+    - views
+  theme:
+    - olivero_base_theme
+id: views_block__vaccination_centers_list_block_1
+theme: olivero_base_theme
+region: sidebar
+weight: -6
+provider: null
+plugin: 'views_block:vaccination_centers_list-block_1'
+settings:
+  id: 'views_block:vaccination_centers_list-block_1'
+  label: ''
+  label_display: visible
+  provider: views
+  context_mapping: {  }
+  views_label: ''
+  items_per_page: '5'
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '/vaccination-centers-list/*/*/*'

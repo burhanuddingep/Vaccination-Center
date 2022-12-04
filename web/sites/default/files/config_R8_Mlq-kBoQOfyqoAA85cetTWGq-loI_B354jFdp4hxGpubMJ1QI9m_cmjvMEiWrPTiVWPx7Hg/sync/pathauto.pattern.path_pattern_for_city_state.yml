@@ -1,0 +1,23 @@
+uuid: 6014b310-bbe8-42c5-80e5-7a35b7e7a7c7
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: path_pattern_for_city_state
+label: 'Path pattern for City & State'
+type: 'canonical_entities:taxonomy_term'
+pattern: '[term:name]'
+selection_criteria:
+  6b47e129-ff53-4d60-ab96-efcaabfbf531:
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    uuid: 6b47e129-ff53-4d60-ab96-efcaabfbf531
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    bundles:
+      city: city
+      state: state
+selection_logic: and
+weight: -5
+relationships: {  }

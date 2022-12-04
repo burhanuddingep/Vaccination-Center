@@ -1,0 +1,30 @@
+uuid: 7141de3d-714d-4f63-9746-1e7759a63c5c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_user_state
+    - taxonomy.vocabulary.state
+  module:
+    - user
+id: user.user.field_user_state
+field_name: field_user_state
+entity_type: user
+bundle: user
+label: 'User State'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      state: state
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

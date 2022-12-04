@@ -1,0 +1,8 @@
+uuid: 1df4bdef-1525-4ffd-95f7-e20a65ec3c28
+langcode: en
+status: true
+dependencies: {  }
+name: City
+vid: city
+description: ''
+weight: 0

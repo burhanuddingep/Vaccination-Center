@@ -1,0 +1,21 @@
+uuid: af4540e2-ba7e-4f0d-92ab-bb2ebbe1c8ce
+langcode: en
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - olivero_base_theme
+id: searchform
+theme: olivero_base_theme
+region: sidebar
+weight: -9
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: 'Search by City/State'
+  label_display: visible
+  provider: search
+  page_id: ''
+visibility: {  }

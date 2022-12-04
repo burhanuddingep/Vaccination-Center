@@ -1,0 +1,8 @@
+.button.register-link {
+    width: fit-content !important;
+}
+
+.register-success {
+    grid-row-start: 4;
+    width: 220px;
+}

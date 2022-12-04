@@ -1,0 +1,22 @@
+uuid: 10f1e98f-5d20-47f9-aede-1f02d22d2b8d
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: path_pattern_for_vaccination_centers
+label: 'Path Pattern for Vaccination Centers'
+type: 'canonical_entities:node'
+pattern: 'vaccination-centers-list/[node:field_state]/[node:field_city]/[node:title]'
+selection_criteria:
+  9052f0ec-40bb-4b1a-81f0-6d2d16a0e553:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 9052f0ec-40bb-4b1a-81f0-6d2d16a0e553
+    context_mapping:
+      node: node
+    bundles:
+      vaccination_center_details: vaccination_center_details
+selection_logic: and
+weight: -5
+relationships: {  }

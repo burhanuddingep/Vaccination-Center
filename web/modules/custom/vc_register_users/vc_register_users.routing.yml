@@ -1,0 +1,15 @@
+vc_register_users.register_user_data:
+  path: '/register-user'
+  defaults:
+    _controller: '\Drupal\vc_register_users\Controller\UserController::registerUsers'
+    type: 'whitepapers'
+  requirements:
+    _permission: 'access content'
+
+vc_register_users.check_user_register:
+  path: '/check-user-register'
+  defaults:
+    _controller: '\Drupal\vc_register_users\Controller\UserController::checkUserRegister'
+    type: 'whitepapers'
+  requirements:
+    _permission: 'access content'

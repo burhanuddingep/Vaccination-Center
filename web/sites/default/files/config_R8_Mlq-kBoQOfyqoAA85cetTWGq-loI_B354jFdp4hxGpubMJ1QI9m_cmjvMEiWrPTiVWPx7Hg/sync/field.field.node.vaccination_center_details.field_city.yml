@@ -1,0 +1,29 @@
+uuid: 655231d0-40bc-46d0-8b93-3515155a7f28
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_city
+    - node.type.vaccination_center_details
+    - taxonomy.vocabulary.city
+id: node.vaccination_center_details.field_city
+field_name: field_city
+entity_type: node
+bundle: vaccination_center_details
+label: City
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      city: city
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

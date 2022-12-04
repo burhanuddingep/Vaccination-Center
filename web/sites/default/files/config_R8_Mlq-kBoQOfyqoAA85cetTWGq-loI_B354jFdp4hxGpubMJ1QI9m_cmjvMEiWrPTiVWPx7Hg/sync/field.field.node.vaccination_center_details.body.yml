@@ -1,0 +1,23 @@
+uuid: f9bf645d-a592-493f-b5e7-61426bcb01c8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.vaccination_center_details
+  module:
+    - text
+id: node.vaccination_center_details.body
+field_name: body
+entity_type: node
+bundle: vaccination_center_details
+label: 'Vaccination Center Description'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary
